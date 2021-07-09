@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Coding Quest</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <div class="flex-container">
+        <!-- <script>
+        fetch("nav")
+            .then(data => {
+                let sidebar = document.querySelector(".sidebar");
+                sidebar.innerHTML = data.responseText;
+            });
+        </script> -->
+        <div class="sidebar-flex-container">
+            <div class="sidebar">
+            </div>
+        </div>
+
+        <div class="content-flex-container">
+            <div class="content">
+                <form id="create-note-form">
+                    <div>
+                        <label for="dayNumber">Day Number</label>
+                        <input type="number" name="dayNumber" id="dayNumber" style="width:50px">
+                    </div>
+                    <div>
+                        <label for="dayDescription">Description</label>
+                        <textarea name="dayDescription" class="dayDescriptionTextArea" placeholder="Insert summary of your day."></textarea>
+                    </div>
+                    <div>
+                        <label for="lessonItemEntry">Lesson(s) learned</label>
+                        <div id="lessonItemEntries">
+                            <textarea name="lessonItemEntry" class="lessonItemEntry" rows="4" cols="50"></textarea>
+                        </div>
+                        <button id="addLessonItemEntryButton">Add lesson entry</button>
+                    </div>
+                    <button id="submitNoteButton">Submit</button>
+                </form>
+            </div>
+            <div class="fixed-logo">
+                <img class="logo" src="My Coding Quest logo.png">
+            </div>
+        </div>
+    </div>
+    <script src="script-create-note.js"></script>
+</body>
+
+</html>

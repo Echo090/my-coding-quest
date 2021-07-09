@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  /* border: red 1px solid; */
+}
+
+body {
+  /* overflow-y: hidden; */
+  background-color: #fed049;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+}
+.flex-container {
+  display: flex;
+  flex-flow: row;
+  width: min(80%, 70.5rem);
+  margin: 0 auto;
+  color: #282846;
+}
+
+@media (max-width: 500px) {
+  .flex-container {
+    width: 100%;
+    flex-flow: column;
+  }
+}
+
+.sidebar-flex-container {
+  flex: 0 0 30%;
+  flex-flow: column nowrap;
+  text-align: left;
+  background: #fed049;
+}
+@media (max-width: 500px) {
+  .sidebar-flex-container {
+    order: 2;
+  }
+}
+.sidebar {
+  margin-top: 25%;
+  margin-bottom: 5%;
+}
+
+@media (max-width: 500px) {
+  .sidebar {
+    margin-top: 0%;
+  }
+}
+
+.nav-container {
+  background-color: #f0d996;
+  border-radius: 5px;
+  padding: 5% 0 5% 5%;
+}
+
+@media (max-width: 500px) {
+  .nav-container {
+    padding: 0;
+  }
+}
+
+.sidebar h1,
+h2 {
+  margin-top: 5%;
+}
+.sidebar h1 {
+  font-size: 2rem;
+}
+
+.menu ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #282846;
+}
+
+.menu a:active {
+  color: #007580;
+}
+
+.sidebar h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.about p {
+  font-size: 0.8em;
+  padding: 0px 40px 0px 5px;
+}
+
+.content-flex-container {
+  flex: 1 1 70%;
+  /* overflow-y: auto; */
+  background-color: #d8ebe4;
+  color: #282846;
+}
+
+@media (max-width: 500px) {
+  .content-flex-container {
+    order: 1;
+  }
+}
+
+.content {
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 7%;
+  margin-bottom: 5%;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.daily-notes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 15px;
+}
+
+@media (max-width: 900px) {
+  .daily-notes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.daily-notes-entry {
+  /* flex-basis: 50%; */
+  padding: 0px 10px 10px 10px;
+}
+
+.daily-notes-entry:hover {
+  background-color: #007580;
+  color: #d8ebe4;
+}
+
+.daily-notes-entry h1 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.daily-notes-entry p {
+  margin-bottom: 1em;
+}
+
+.DLE-date {
+  margin-bottom: 5%;
+}
+
+.daily-learning-entry h2 {
+  font-size: 1.25rem;
+}
+
+.daily-learning-entry p {
+  line-height: 130%;
+  margin-bottom: 1em;
+}
+
+.mock-button {
+  display: inline-block;
+  background-color: gray;
+  width: 25%;
+  padding: 5px 5px;
+  text-align: center;
+}
+
+.mock-button:hover {
+  background-color: lightgrey;
+}
+
+.logo {
+  width: 20%;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  opacity: 50%;
+}
+
+.logo:hover {
+  opacity: 100%;
+}
+
+#create-note-form {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.lessonItemEntry,
+.dayDescriptionTextArea {
+  display: block;
+  width: 100%;
+}
+
+.dayDescriptionTextArea {
+  height: 150px;
+}
+
+#create-note-form > div {
+  margin-bottom: 1rem;
+}
+
+.lessonItemEntry {
+  margin-bottom: 0.5rem;
+}
