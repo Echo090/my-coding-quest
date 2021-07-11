@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Project 02 | Responsive Design Made Easy</title>
+    <style>
+        :root{
+            --clr-primary-300: #f3eed9;
+            --clr-primary-400: #824936;
+
+            --clr-neutral-100: #fff;
+            --clr-neutral-900: #222c2a;
+
+            --ff-primary: 'Roboto', sans-serif;
+            --ff-accent: 'Playfair Display', serif;
+        }
+            
+        *,
+        *::before,
+        *::after{
+            box-sizing: content-box;
+            /* border: red solid 1px; */
+        }
+
+        body{
+            font-family: var(--ff-primary);
+            font-weight: 400;
+            font-size: 1.3125rem;
+            line-height: 1.6;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        p{
+            margin: 0;
+        }
+
+        h1, h2, h3{
+            color: var(--clr-primary-400);
+            font-family: var(--ff-accent);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        h2,
+        h3,
+        p{
+            margin-bottom: 1em;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+
+        header,
+        section{
+            padding: 2rem 0;
+        }
+
+        @media (min-width: 40em) {
+            header,
+            section{
+            padding: 7rem 0;
+        }
+        }
+
+        .img{
+            display: block;
+            width: 100%;
+        }
+
+        .container{
+            margin-inline: auto;
+            width: min(90%, 70.5rem);
+        }
+
+        .container--narrow{
+            max-width: 35rem;
+        }
+
+        .split{
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (min-width: 40em){
+            .split{
+                flex-direction: row;
+            }
+
+            .split > * {
+                flex-basis: 50%;
+            }
+
+            .split > * + * {
+                margin-left: 2em;
+            }
+        }
+
+        .bg-light{
+            background-color: var(--clr-primary-300);
+        }
+        .bg-primary{
+            color: var(--clr-neutral-100);
+            background-color: var(--clr-primary-400);
+        }
+        .bg-dark{
+            color: var(--clr-neutral-100);
+            background-color: var(--clr-neutral-900);
+        }
+
+        .bg-primary h2,
+        .bg-dark h2{
+            color: var(--clr-primary-300);
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-light text-center">
+        <div class="container container--narrow">
+            <p>Lorem, ipsum dolor.</p>
+            <h1>Responsive layouts don't have to be a struggle.</h1>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h2 class="text-center">Quality Designs</h2>
+            <div class="split">
+                <div>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo est quibusdam non amet fugiat quas dolores inventore? Dolores accusantium voluptate veniam molestias iure exercitationem repudiandae!</p>
+                </div>
+                <div>
+                    <p>Nam at consectetur modi quis voluptate culpa minus, omnis odio dicta architecto animi eos et hic, ratione, id sit sunt pariatur rem velit. Sequi, reprehenderit!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-dark">
+        <div class="container">
+            <div class="split">
+                <div>
+                    <h2>Made customer for you</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit consequuntur error harum dolores aut officiis sapiente alias cupiditate ratione nemo.</p>
+                </div>
+                <div>
+                    <img src="/img/mock-projects/responsive-site-01/man-looking-over-mountain.jpg" alt="Man looking over the mountains" class="img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-primary">
+        <div class="container">
+            <div class="split">
+                <div>
+                    <img src="./img/mock-projects/responsive-site-01/boat-on-ocean.jpg" alt="Small boat on the ocean." class="img">
+                </div>
+                <div>
+                    <h2>Created with care</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis impedit velit excepturi aspernatur inventore debitis doloremque animi, neque temporibus eveniet!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Project 03 | Tribute Page</title>
+    <style>
+        *,
+        *::before,
+        *::after{
+            box-sizing: content-box;
+            /* border: red solid 1px; */
+        }
+
+        body{
+            font-family:Poppins, sans-serif;
+            font-size: 1.3125rem;
+            background-color: rgb(116, 113, 113);
+        }
+
+        body,
+        h1,
+        label,
+        input,
+        p{
+            margin: 0;
+            display: block;
+        }
+
+        .wrapper{
+            width: min(80%, 800px);
+            margin: 0 auto;
+        }
+
+        header{
+            color:white;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .title{
+            font-family: 1.3em;
+        }
+
+        form{
+            background-color: rgb(201, 169, 231);
+            padding: 2rem 0;
+        }
+
+        .form-wrapper{
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        input,
+        select,
+        textarea,
+        button{
+            width: 100%;
+            border-radius: 3px;
+            padding: 0.25rem 2%;
+            font-family: Poppins, sans-serif;
+        }
+
+        .input-wrapper{
+            margin: 0 0 1rem 0;
+        }
+
+        button{
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            background-color: blueviolet;
+            color: white;
+            
+            font-size: 1.1em;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: bold;
+        }
+    </style>     
+</head>
+<body>
+    <div class="wrapper">
+        <header class="contact-me">
+            <h1 class="title">Contact Me</h1>
+            <p class="description">Got any message or proposal? Feel free to contact me!</p>
+        </header>
+
+        <form action="results.html" method="GET" class="survery-form">
+            <div class="form-wrapper">
+                <div class="input-wrapper">
+                    <label for="name" class="name-label">Name</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your full name.">
+                </div>
+                <div class="input-wrapper">
+                    <label for="email" class="email-label">Email</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email address.">
+                </div>
+                <div class="input-wrapper">
+                    <label for="number" class="number-label">Contact Number</label>
+                    <input type="tel" name="number" id="number" min="1" max="99999999" placeholder="Enter your contact number">
+                </div>
+                <div class="input-wrapper">
+                    <label for="transation-type">Transaction</label>
+                    <select name="transation-type" id="dropdown" >
+                        <option value="" selected disabled hidden>Choose...</option>
+                        <option value="inquiry" class="inquiry">Inquiry</option>
+                        <option value="proposal" class="proposal">Proposal</option>
+                        <option value="suggestions" class="suggestions">Suggestions</option>
+                        <option value="complaints" class="complaints">Complaints</option>
+                    </select>
+                </div>
+                <div class="input-wrapper">
+                    <label for="comments" class="comments-label">Any comments?</label>
+                    <textarea name="comments" id="comments"  rows="10" placeholder="Enter you comment here..."></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
