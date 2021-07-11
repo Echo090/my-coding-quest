@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap");
+
 * {
   margin: 0;
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
   /* border: red 1px solid; */
+  color: #282846;
 }
 
 body {
@@ -33,20 +36,13 @@ h1 {
   flex-flow: column nowrap;
   text-align: left;
   background: #fed049;
-}
-@media (max-width: 500px) {
-  .sidebar-flex-container {
-    order: 2;
-  }
-}
-.sidebar {
-  margin-top: 25%;
-  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 @media (max-width: 500px) {
-  .sidebar {
-    margin-top: 0%;
+  .sidebar-flex-container {
+    order: 2;
+    margin: 5% 0%;
   }
 }
 
@@ -58,7 +54,8 @@ h1 {
 
 @media (max-width: 500px) {
   .nav-container {
-    padding: 0;
+    /* padding: 0; */
+    padding: 0% 2%;
   }
 }
 
@@ -100,6 +97,12 @@ h2 {
   padding: 0px 40px 0px 5px;
 }
 
+@media (max-width: 500px) {
+  .about {
+    margin: 0% 2%;
+  }
+}
+
 .content-flex-container {
   flex: 1 1 70%;
   /* overflow-y: auto; */
@@ -120,47 +123,46 @@ h2 {
   margin-bottom: 5%;
 }
 
-.intro {
+.content-intro {
   text-align: center;
   margin-bottom: 2%;
-}
-
-.intro h1 {
-  font-size: 2.5rem;
+  /* font-size: 1rem; */
   text-transform: uppercase;
+  font-weight: 900;
 }
 
-.daily-notes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-row-gap: 15px;
+.daily-notes-flexcontainer {
+  display: flex;
+  flex-direction: column;
+  /* grid-template-columns: 1fr 1fr; */
+  /* grid-row-gap: 15px; */
 }
 
-@media (max-width: 900px) {
-  .daily-notes-grid {
+/* @media (max-width: 900px) {
+  .daily-notes-flexcontainer {
     grid-template-columns: 1fr;
   }
-}
+} */
 
 .daily-notes-entry {
   /* flex-basis: 50%; */
-  padding: 0px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
-.daily-notes-entry:hover {
+/* .daily-notes-entry:hover {
   background-color: #007580;
   color: #d8ebe4;
-}
+} */
 
-.daily-notes-entry h1 {
+.daily-notes-entry h1,
+.blog-entry h1 {
   font-size: 1.25rem;
-  text-align: center;
-  margin-top: 2%;
-  margin-bottom: 2%;
+  text-align: left;
 }
 
-.daily-notes-entry p {
-  margin-bottom: 1em;
+.daily-notes-entry p,
+.blog-entry p {
+  margin-bottom: 0.5em;
 }
 
 .DLE-date {
@@ -175,18 +177,19 @@ h2 {
   line-height: 130%;
   margin-bottom: 1em;
 }
-
-.mock-button {
-  display: inline-block;
-  background-color: gray;
-  width: 25%;
-  padding: 5px 5px;
-  text-align: center;
+.daily-notes-links {
+  text-decoration: none;
 }
 
-.mock-button:hover {
-  background-color: lightgrey;
+.blog-entry-edit-options {
+  margin-bottom: 2%;
 }
+
+/* .blog-entry h1 {
+  font-size: 1.25rem;
+  text-align: left;
+  margin-bottom: 2%;
+} */
 
 .logo {
   width: 20%;
@@ -205,20 +208,16 @@ h2 {
   margin: 0 auto;
 }
 
-.lessonItemEntry,
-.dayDescriptionTextArea {
+div > input,
+textarea {
   display: block;
   width: 100%;
-}
-
-.dayDescriptionTextArea {
-  height: 150px;
 }
 
 #create-note-form > div {
   margin-bottom: 1rem;
 }
 
-.lessonItemEntry {
+.bodyTextArea {
   margin-bottom: 0.5rem;
 }

@@ -5,65 +5,29 @@
     <div class="flex-container">
         
         <%- include("./partials/sidebar.ejs") %>
-         
+
         <div class="content-flex-container">
             <div class="content">
-                    <div class="daily-learning-entry">
-                        <h1 class="DLE-title">Hosting my site through GitHub</h1>
-                        <div class="DLE-date">3/28/2021</div>
-                        <p class="DLE-entry">I knew I wanted to make my own little site available in the public. It wasn't obvious to me where I'd publish it at first. I have a blog with WordPress, but they don't offer CSS customization in their free version. I also tried searching for other site builders that offer HTML and CSS customization. Then I read about GitHub, which at that point, was less of a light bulb moment but more of a vague memory resurfacing to my consciousness. I actually already tried uploading a site to GitHub last year, I have just completely forgotten.</p>
-                        <p>With a (not so) little bit of help from Google and YouTube, here's what I re-learned in order to host my site through GitHub.</p>
-                        <h2>Step 01. Install Git</h2>
-                        <p>Git is necessary so I could use Git commands through an application called Git Bash. I could have also used Git commands through Command Prompt, but I haven't tried it. These commands allow me to upload my files to a remote repository in GitHub, which is necessary in order to use GitHub as my host.</p>
-                        <h2>Step 02. Setup a GitHub account</h2>
-                        <p>GitHub through a feature they call GitHub Pages, allows me to host my site. But that's not what GitHub is mainly for. GitHub is a version control tool. It allows its users to upload various versions of their project. I've been said it's best practice to do it, but that isn't really the reason I chose GitHub. It's just that GitHub is that cool to allow me to host sites I handcraft on my own.</p>
-                        <h2>Step 03. Initialize Git</h2>
-                        <p>Initializing Git creates a local repository in my folder. This is different from the repository I'll be creating through GitHub, as that one is remote. This repository I'll be making first is just going to be stored in my computer. </p>
-                        <p>To begin with, I went to the folder containing my HTML and CSS files. Installing Git adds additional right-click options, one which says "Git Bash Here".</p>
-                        <p>​I right-clicked anywhere in the folder I was in in and went to that option. Doing so opened up Git Bash with its current directory set to my folder. Git Bash looks very similar to Command Prompt, but for those unfamiliar, programs like these are basically text versions of your entire computer. Imagine if Windows did not have graphical user interface, that's what Command Prompt and Git Bash exactly is. If there's one thing people know about Command Prompt though, it's that you input black and white commands in it. Which is exactly the same with Git Bash except it comes in pretty colors.</p>
-                        <p>In order to initialize a local repository, I typed out this command:</p>
-                        <div class="code-sample">
-                            <p>git init</p>
-                        </div>
-                        <p>Nothing would appear to happen, but a hidden folder called .git was actually created in my folder. I don't understand the content of that folder, but I assume it contains the local repository.</p>
-                        <h2>Step 04. Configure Git</h2>
-                        <p>Configuring Git allows communication between Git Bash and my GitHub account. To begin, I typed this code:</p>
-                        <div class="code-sample">
-                            <p>git config --global user.name 'my-username-at-github'</p>
-                        </div>
-                        <p>Git, with its newer version, made it easier to verify credentials.  I remember the first time I was doing this last year, I had to copy paste some information from my GitHub account. I did not have to do it this time as putting the command opened a prompt for me to put my password. With that, my computer was now connected with my GitHub account.</p>
-                        <h2>Step 04. Add and commiting the files</h2>
-                        <p>This is going to be tough to explain. I myself don't fully understand the concepts yet. The first thing you is to add the files to something I would call an index. It's sort of a waiting area of all the files you'll be uploading to a repository.</p>
-                        <p>In order to add all my files to the index, I typed this command.</p>
-                        <div class="code-sample">
-                            <p>git add .</p>
-                        </div>
-                        <p>The period (.) is a shorthand for all files in the current folder. </p>
-                        <p>After adding the files, I needed to commit the files to the repository. I don't understand why commit is the choice of word, but it uploads all the files in the index to the repository. I did so through this command:</p>
-                        <div class="code-sample">
-                            <p>git commit -m "message to remind yourself"</p>
-                        </div>
-                        <p>Since Git and GitHub are used for version control tool, it's handy to put a message to remind yourself about the changes you did in a certain version. I don't fully understand the -m part, but I've been told it's a flag, an option for the way the files are committed</p>
-                        <p>After doing this, I've not uploaded my files to the local repository.</p>
-                        <h2>Step 05. Create a remote repository through GitHub</h2>
-                        <p>After establishing a local repository, it is time to create a remote repository through GitHub. I found it easy to create one and it was a very intuitive process.</p>
-                        <p>I then needed to attach this remoter repository with my local one. To do that, I needed to copy the hyperlink for my remote repository.  I then  type this command in GitBash:</p>
-                        <div class="code-sample">
-                            <p>git remote add origin 'hyperlink-to-remote-repository'</p>
-                        </div>
-                        <h2>Step 06. Pushing the files</h2>
-                        <p>Now that I had my local and remote repository connected, it doesn't actually mean that they would automatically sync. I needed to push the files uploaded in my local repository to the remote repository in my GitHub account. To do so, I type this command in Git Bash.</p>
-                        <div class="code-sample">
-                            <p>git push -u origin main</p>
-                        </div>
-                        <p>And there we have it. I now had my files uploaded to my GitHub account. Everytime I wanted to make a change, I had to go through the same process of adding, omitting, and pushing my files.</p>
-                        <h2>Step 07.  Identify source for my GitHub Pages site</h2>
-                        <p>The final step is to launch the site through GitHub Pages. Under settings of my GitHub account, I found a section about GitHub Pages. I just choose my remote repository as its source, which then generated the link to my site.</p>
+                <div class="content-intro">
+                    <h1>Daily Notes</h1>
+                </div>
+                <div class="daily-notes-flexcontainer">
+                    <% blogs.forEach(blog => { %>
+                    <div class="daily-notes-entry">
+                        <a class="daily-notes-links" href="/daily-notes/<%= blog._id %>">    
+                            <h1> <%= blog.title %> </h1>
+                            <p> <%= blog.snippet %> </p>
+                            <ul class="daily-notes-list">
+                                <% blog.body.forEach(item => { %>
+                                    <li> <%= item %> </li>
+                                <% }) %>
+                            </ul>
+                        </a>
                     </div>
+                    <% }) %>
+                </div>
             </div>
-            <div class="fixed-logo">
-                <img class="logo" src="My Coding Quest logo.png">
-            </div>
+            <%- include('./partials/floating-logo.ejs') %>
         </div>
     </div>
 

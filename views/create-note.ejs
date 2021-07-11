@@ -1,54 +1,63 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>My Coding Quest</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
-    
-
-</head>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
 <body>
     <div class="flex-container">
-        <!-- <script>
-        fetch("nav")
-            .then(data => {
-                let sidebar = document.querySelector(".sidebar");
-                sidebar.innerHTML = data.responseText;
-            });
-        </script> -->
-        <div class="sidebar-flex-container">
-            <div class="sidebar">
-            </div>
-        </div>
-
+        
+        <%- include("./partials/sidebar.ejs") %>
+         
         <div class="content-flex-container">
             <div class="content">
-                <form id="create-note-form">
+                <form id="create-note-form" action="/daily-notes" method="POST">
                     <div>
-                        <label for="dayNumber">Day Number</label>
-                        <input type="number" name="dayNumber" id="dayNumber" style="width:50px">
+                        <label for="title">Title</label>
+                        <input type="text" name="title" required>
                     </div>
                     <div>
-                        <label for="dayDescription">Description</label>
-                        <textarea name="dayDescription" class="dayDescriptionTextArea" placeholder="Insert summary of your day."></textarea>
+                        <label for="snippet">Snippet</label>
+                        <textarea name="snippet" class="snippetTextArea" placeholder="Insert snippet" rows="4" required></textarea>
                     </div>
                     <div>
-                        <label for="lessonItemEntry">Lesson(s) learned</label>
-                        <div id="lessonItemEntries">
-                            <textarea name="lessonItemEntry" class="lessonItemEntry" rows="4" cols="50"></textarea>
+
+                        <!-- 
+                        1. fix TEXTAREA name
+                        2. reset addLessonItemEntryButton default
+                        3. addLessonItemEntryButton - redefine function so that lessonItemEntry increments
+                        4. Test if it works by printing req.body on app.js 
+                        -->
+                        <label for="body[]">Lesson(s) learned</label>
+                        <div class="bodies">
+                            <textarea name="body[]" class="bodyTextArea" rows="4" required></textarea>
                         </div>
-                        <button id="addLessonItemEntryButton">Add lesson entry</button>
+                        <button id="addBodyTextAreaButton">Add lesson entry</button>
+                        
                     </div>
-                    <button id="submitNoteButton">Submit</button>
+                    <button>Submit</button>
                 </form>
             </div>
-            <div class="fixed-logo">
-                <img class="logo" src="My Coding Quest logo.png">
-            </div>
+            <%- include('./partials/floating-logo.ejs') %>
         </div>
     </div>
-    <script src="script-create-note.js"></script>
+    <script>
+        const addLessonItemEntryButton = document.getElementById("addLessonItemEntryButton");
+
+        addBodyTextAreaButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        var bodies = document.querySelector(".bodies");
+        var input = document.createElement("textarea");
+        input.rows = 4;
+        input.name = "body[]";
+        input.className = "bodyTextArea";
+        bodies.appendChild(input);
+        });
+
+        // submitButton.addEventListener("click", e => {
+        //     e.preventDefault();
+        //     const title = document.getElementsByClassName("titleTextInput").value;
+        //     const snippet = document.getElementsByClassName("snippetTextArea").value;
+        // });
+
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="flex-container">
+        
+        <%- include("./partials/sidebar.ejs") %>
+
+        <div class="content-flex-container">
+            <div class="content">
+                <div class="blog-entry">  
+                    <h1> <%= blog.title %> </h1>
+                    <div class="blog-entry-edit-options">
+                        <button class="editButton">Edit(WIP)</button>
+                        <button  class="deleteButton">Delete</button>
+                    </div>
+                    <p> <%= blog.snippet %> </p>
+                    <ul class="daily-notes-list">
+                        <% blog.body.forEach(item => { %>
+                            <li> <%= item %> </li>
+                        <% }) %>
+                    </ul>
+                    </div>
+
+                </div>
+
+            </div>
+            <%- include('./partials/floating-logo.ejs') %>
+        </div>
+    </div>
+    <script>
+        const deleteButton = document.querySelector('button.deleteButton');
+        deleteButton.addEventListener("click", (e) => {
+            const endpoint = `/daily-notes/<%= blog._id %>`;
+        
+            fetch (endpoint, {
+                method:"DELETE"
+            })
+            .then((response) => response.json())
+            .then((data) => window.location.href = "/")
+            .catch((err) => console.log(err));
+        })
+    </script>
+</body>
+
+</html>

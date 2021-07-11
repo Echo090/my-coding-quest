@@ -1,0 +1,179 @@
+{
+    "entries" : [
+    {
+        "day" : "Day 1",
+        "intro" : "Today, I learned the following:",
+        "lessons" : [
+            "How to host my site in Github by doing Git-ish things I don't understand.",
+            "Learned how to properly link a CSS stylesheet to an html file.",
+            "Learned how to center this thing. Gosh this was more complicated than I thought."
+            ]
+    },
+    {
+        "day" : "Day 2",
+        "intro" : "I thought CSS was easy. Today, I learned:",
+        "lessons" : [
+            "Block, inline, and inline-block display. I'm going to forget about this. LOL",
+            "Finally learned about flexbox, i think...",
+            "Re-learned how to select an element under a given class selector. I keep on forgetting stuff I learned.",
+            "Learned the differences between borders and outlines"
+        ]
+    },
+    {
+        "day" : "Day 3",
+        "intro" : "It's day three and I haven't yet quit. Pat on my back, Jerome. Today, I learned:",
+        "lessons" : [
+            "Refreshed my lessons about inline-block display.",
+            "Learned how to make a fixed sidebar. Gosh the amount of things I needed to read and watch before I was able to find what I was looking for. Wow.",
+            "Learned a fix to finally solve my issue with flexbox yesterday!!!"
+        ]
+    },
+    {
+        "day" : "Day 4",
+        "intro" : "Didn't learn anything too much new today, I finally decided to do design the site. But today, I learned:",
+        "lessons" : [
+            "Learned to make a pinned or fixed image. This should have been a lot easier for me, but I was accidentally putting CSS code in my HTML. LOL"
+        ]
+    },
+    {
+        "day" : "Day 5",
+        "intro" : "Contineud to refine the design of this site. I added another page too. I assume I'll be doing this over and over. Today, I learned:",
+        "lessons" : [
+            "How to import fonts from Google Fonts.",
+            "Learned some basic Emmet shortcuts",
+            "Relearned basics about hyperlinks"
+        ]
+    },
+    {
+        "day" : "Day 6",
+        "intro" : "Wah, I missed my lesson for yesterday. Nevertheless, let's push through. Today, I learned:",
+        "lessons" : [
+            "Finally, CSS Grid. I've actually recoded this so this entries are in a grid instead of a flexbox.",
+            "Learned about media queries. This site should now look better with mobile phones.",
+            "Learned the difference between em and rem."
+        ]
+    },
+    {
+        "day" : "Day 7",
+        "intro" : "I added another page to this site. It's going to contain my mock projects. I already added one, and it's a simple minimum effort tribute page to Stanley Kubrick. Today, I learned:",
+        "lessons" : [
+            "Learned more about grid features like grid-area.",
+            "Re-learned about CSS variable.Hopefully, I get to use it for my project tomorrow."
+        ]
+    },
+    {
+        "day" : "Day 8",
+        "intro" : "I'm overthinking about this tribute page I'm making. Today, I learned:",
+        "lessons" : [
+            "Other selectors such as the attribute selector and child selectors.",
+            "Learned that you could place more than one background in an element."
+        ]
+    },
+    {
+        "day" : "Day 9",
+        "intro" : "Decided to keep things simpler. I don't have to rush myself anyway. As a lesson for today, I decided to code along with a video about responsiveness. Today, I learned:",
+        "lessons" : [
+            "Watching people code made me realize that there is no one way to code. It almost feels like art seeing someone code. There are techniques and best practices, but ultimately, it depends on the coder what he does to get his desired outcome.",
+            "Vendor prefixes. Also discovered useful sites such as caniuse.com and shouldiprefix.com."
+        ]
+    },
+    {
+        "day" : "Day 10",
+        "intro" : "Added a new mock project, this time to refresh my knowledge on HTML forms. Afterwards, I decided to venture in JavaScript.Today, I learned:",
+        "lessons" : [
+            "earned HTML form elements such as input, select, and textarea. I also learned 2 ways to match a label to an input element. First, by using the 'for' and 'name' attribute. Second, by putting them together in a div.",
+            "I realzied how simple JavaScript's syntax is. It feels like I have a lot to learn before I could start using JavaScript for my site, but I'm one hour into a YouTube tutorial, and I have 2.5 hours to go. Hopefully, I finish by this week."
+        ]
+    },
+    {
+        "day" : "Day 11",
+        "intro" : "Continued studying JavaScript. The hardest part of the day didn't even involve anything with code.Today, I learned:",
+        "lessons" : [
+            "Object declaration via JS. It was surprisingly very easy. So much so that it actually confuses my brain that has been wired to declare and initialize objects the Java way.",
+            "Also learned about JS' control flow. JS has equality operators that considers if two values are of the same variable type. There is the == operator to disregard whether the int 3 is the same with the string '3'. Opposite to this, is the === operator that regards the variable types so that int 3 would not equal to the string '3'. Fascinating stuff.",
+            "nd the hardest part, I learned how to use VS Code as an IDE for JavaScript. I  realize VS Code was not automatically built for running JS code. I needed to install Node JS and use a console to run my code. This took me a while to figure out."
+        ]
+    },
+    {
+        "day" : "Day 12",
+        "intro" : "I thought CSS was easy. Today, I learned:",
+        "lessons" : [
+            "The ... operator which is a shorthand for all the passed arguments regardless of how many arguments there are. The ... operator can also be used to copy the content of an array for some reason.",
+            "Learned more about let and const. const coesn't actually intialize immutable arrays or objects. I had to use Object.freeze() function to make sure they're immutable. I better using lets and consts more during practice. vars actually take effect gloally regardless of where they are intiialzied.",
+            "RNested ternary operators. I didn't know they could get that complex",
+            "earnd some Math functions such as random and floor.",
+            "Learned to write anonymous functions."
+        ]
+    },
+    {
+        "day" : "Day 13",
+        "intro" : "There were 30 mintues left in the video I was following to study JavaScript, I though I could have finished it today. Turns out I may need until tomorrow. Today, I learned:",
+        "lessons" : [
+            "The various ways one could destructure objects and arrays.",
+            "How to make template literals",
+            "Surprisingly, I only learned how to make methods within objects today. I thought I already knew."
+        ]
+    },
+    {
+        "day" : "Day 14",
+        "intro" : "Completed the video by freecodecamp. Today, I learned:",
+        "lessons" : [
+            "Realized that all the recent things I was learning was under the ES6 syntax.",
+            "Learned to make setters and getters."
+        ]
+    },
+    {
+        "day" : "Day 15",
+        "intro" : "I'm back to studying about JavaScript. It took me a while to get back as I was lost trying to find another learning course. Today, I learned.",
+        "lessons" : [
+            "Learned to use query selectors. For example, you've noticed the prompt at the beginning right? Of course no, because I disabled the promp for now. It's annoying as hell"
+        ]
+    },
+    {
+        "day" : "Day 16",
+        "intro" : "I've been gone for a while, but it doesn't mean I haven't been studying. Just that I've been hopping from one learning material to another without really progressing. I decided to stick to Team Treehouse's JavaScript track and went back to relearn everything about about JavaScript. At this point, I'm writing again because I've started learning new things again.Today (or rather in the past few days), I learned",
+        "lessons" : [
+            "Learned about DOM manipualtion and traversal. My entire learning journey has been leading up to this, hahahaha. I challenged myself to make some sort of list maker with the things I learned, and it took me a while to figure everything out. Still, I'm happy to be back.",
+            "Along the way, I also learned Google Chrome's debuggign features."
+        ]
+    },
+    {
+        "day" : "Day 17",
+        "intro" : "Learned about AJAX today or what you cakk Asynchronous JavaScript and XML.It's a technology that allows people to maniuplate the webpage without reloading it.",
+        "lessons" : [
+            "Learned super basic things about the XMLHttp object and the methods it contain. Learned to load another webpage's content in my current webpage through the lessons I learned today.",
+            "Also learned about how to setup a local server, mainly through MAMP. It took me a while to figure out why my code was not working, but it was actually because I needed my own local server."
+        ]
+    },
+    {
+        "day" : "Day 18",
+        "intro" : "To tell the truth, this is not day 18. I've lost countr of the days I've been trying to figure out about AJAX and aysnc Java. But finally, I'm blogging again! Today, I learned:",
+        "lessons" : [
+            "You don't have to understand everything. Programming is like a leap of faith. You jump with what you know, stumble, get yourself together, and finish the code. I think this is a very important lesson I need to constantly remind myself",
+            "I've implemented this daily notes feed using AJAX and a callback method. It's so cooooooooool I've finally accomplished this stage."
+        ]
+    },
+    {
+        "day" : "Day 19",
+        "intro" : "Lessons on async Java continued. Today, I learned:",
+        "lessons" : [
+            "Learned how to load the entries of this blog through various methods such as promises and async await.",
+            "Learned a bit about fetch."
+        ]
+    },
+    {
+        "day" : "Day 20",
+        "intro" : "Today, I learned:",
+        "lessons" : [
+            "Learned how to use FetchAPI. It makes sending XHR requests extremely simpler. It's supposed to be used along with promises, I'm just not comfortable combining them for now."
+        ]
+    },
+    {
+        "day" : "Day 21",
+        "intro" : "A project begins, and ends without any outcome... Today, I learned:",
+        "lessons" : [
+            "I wanted to create a feature in this blog that would let me type out the entry and submit the text to the JSON file via a post request. Turns out this was a bad idea. I asked in a Discord server and they told me it was bad to use JSON as a database. Oh well, but much more reason to continue with my lessons."
+        ]
+    }
+    ]
+}

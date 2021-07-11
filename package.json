@@ -12,7 +12,8 @@
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1",
-    "install": "^0.13.0"
+    "install": "^0.13.0",
+    "mongoose": "^5.13.2"
   },
   "engines": {
     "node": "14.17.1"
