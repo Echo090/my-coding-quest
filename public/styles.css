@@ -221,3 +221,7 @@ textarea {
 .bodyTextArea {
   margin-bottom: 0.5rem;
 }
+.date {
+  font-style: italic;
+  font-size: 0.8rem;
+}

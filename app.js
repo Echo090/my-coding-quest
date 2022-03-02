@@ -15,7 +15,12 @@ const dbURI =
   "mongodb+srv://Echo090:Chinatown66!@nodetuts.mkhcn.mongodb.net/my-coding-quest?retryWrites=true&w=majority";
 
 mongoose
-  .connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
+  .connect(dbURI, {
+    useNewUrlParser: true,
+    // useCreateIndex: true,
+    useUnifiedTopology: true,
+    // useFindAndModify: false,
+  })
   .then((results) => app.listen(port))
   .catch((err) => console.log(err));
 

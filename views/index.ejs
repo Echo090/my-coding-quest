@@ -16,6 +16,7 @@
                     <div class="daily-notes-entry">
                         <a class="daily-notes-links" href="/daily-notes/<%= blog._id %>">    
                             <h1> <%= blog.title %> </h1>
+                            <p class="date"> <%= blog.date || "undated" %> </p>
                             <p> <%= blog.snippet %> </p>
                             <ul class="daily-notes-list">
                                 <% blog.body.forEach(item => { %>

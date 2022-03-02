@@ -10,8 +10,9 @@
             <div class="content">
                 <div class="blog-entry">  
                     <h1> <%= blog.title %> </h1>
+                    <p class="date"> <%= blog.date %> </p>
                     <div class="blog-entry-edit-options">
-                        <button class="editButton">Edit(WIP)</button>
+                        <a href="/daily-notes/<%= blog._id %>/edit"> <button class="editButton">Edit</button></a>
                         <button  class="deleteButton">Delete</button>
                     </div>
                     <p> <%= blog.snippet %> </p>
@@ -40,6 +41,14 @@
             .then((data) => window.location.href = "/")
             .catch((err) => console.log(err));
         })
+        // const editButton = document.querySelector('button.editButton');
+        // editButton.addEventListener('click', (e) => {
+        //     const endpoint = `/daily-notes/<%= blog._id %>/edit`;
+        
+        // fetch (endpoint, {
+        //     method:"GET"
+        // })
+        // })
     </script>
 </body>
 

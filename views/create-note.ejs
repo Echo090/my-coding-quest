@@ -14,6 +14,10 @@
                         <input type="text" name="title" required>
                     </div>
                     <div>
+                        <label for="date">Date</label>
+                        <input type="date" name="date">
+                    </div>
+                    <div>
                         <label for="snippet">Snippet</label>
                         <textarea name="snippet" class="snippetTextArea" placeholder="Insert snippet" rows="4" required></textarea>
                     </div>
@@ -30,6 +34,7 @@
                             <textarea name="body[]" class="bodyTextArea" rows="4" required></textarea>
                         </div>
                         <button id="addBodyTextAreaButton">Add lesson entry</button>
+                        <button id="deleteBodyTextAreaButton">Delete lesson entry</button>
                         
                     </div>
                     <button>Submit</button>
@@ -42,13 +47,22 @@
         const addLessonItemEntryButton = document.getElementById("addLessonItemEntryButton");
 
         addBodyTextAreaButton.addEventListener("click", (e) => {
-        e.preventDefault();
-        var bodies = document.querySelector(".bodies");
-        var input = document.createElement("textarea");
-        input.rows = 4;
-        input.name = "body[]";
-        input.className = "bodyTextArea";
-        bodies.appendChild(input);
+            e.preventDefault();
+            var bodies = document.querySelector(".bodies");
+            var input = document.createElement("textarea");
+            input.rows = 4;
+            input.name = "body[]";
+            input.className = "bodyTextArea";
+            bodies.appendChild(input);
+        });
+
+        const deleteLessonItemEntryButton = document.getElementById("deleteLessonItemEntryButton");
+        deleteBodyTextAreaButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            var bodies = document.querySelector(".bodies");
+            var textAreas = document.querySelectorAll(".bodyTextArea");
+            var lastBodyTextArea = bodies.lastElementChild;
+            if (textAreas.length>1) bodies.removeChild(lastBodyTextArea);
         });
 
         // submitButton.addEventListener("click", e => {

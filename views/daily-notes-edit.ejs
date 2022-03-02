@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("./partials/head.ejs") %>
+<body>
+    <div class="flex-container">
+        
+        <%- include("./partials/sidebar.ejs") %>
+         
+        <div class="content-flex-container">
+            <div class="content">
+                <form id="create-note-form" action="/daily-notes">
+                    <div>
+                        <label for="title">Title</label>
+                        <input class="titleTextInput" type="text" name="title" value="<%= blog.title %>" required>
+                    </div>
+                    <div>
+                        <label for="date">Date</label>
+                        <input class="dateDateInput" type="date" name="date" value="<%= blog.date %>">
+                    </div>
+                    <div>
+                        <label for="snippet">Snippet</label>
+                        <textarea name="snippet" class="snippetTextArea" placeholder="Insert snippet" rows="4" required><%= blog.snippet %></textarea>
+                    </div>
+                    <div>
+
+                        <!-- 
+                        1. fix TEXTAREA name
+                        2. reset addLessonItemEntryButton default
+                        3. addLessonItemEntryButton - redefine function so that lessonItemEntry increments
+                        4. Test if it works by printing req.body on app.js 
+                        -->
+                        <label for="body[]">Lesson(s) learned</label>
+
+                        <div class="bodies">
+                            <% blog.body.forEach(item => { %>
+                            <textarea name="body[]" class="bodyTextArea" rows="4"  required><%= item %></textarea>
+                            <% }) %>
+                        </div>
+                        <button id="addBodyTextAreaButton">Add lesson entry</button>
+                        <button id="deleteBodyTextAreaButton">Delete lesson entry</button>
+                        
+                    </div>
+                    <button class="editButton">Submit Edit</button>
+                </form>
+            </div>
+            <%- include('./partials/floating-logo.ejs') %>
+        </div>
+    </div>
+    <script>
+        const addLessonItemEntryButton = document.getElementById("addLessonItemEntryButton");
+
+        addBodyTextAreaButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        var bodies = document.querySelector(".bodies");
+        var input = document.createElement("textarea");
+        input.rows = 4;
+        input.name = "body[]";
+        input.className = "bodyTextArea";
+        bodies.appendChild(input);
+        });
+
+        const deleteLessonItemEntryButton = document.getElementById("deleteLessonItemEntryButton");
+        deleteBodyTextAreaButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            var bodies = document.querySelector(".bodies");
+            var textAreas = document.querySelectorAll(".bodyTextArea");
+            var lastBodyTextArea = bodies.lastElementChild;
+            if (textAreas.length>1) bodies.removeChild(lastBodyTextArea);
+        });
+
+        const submitEditButton = document.querySelector("button.editButton");
+        const thisTitle = document.querySelector("input.titleTextInput").value.value;
+        // const thisTitle = "eeey";
+        const thisDate = document.querySelector("input.dateDateInput").value.value;
+        const thisSnippet = document.querySelector("textarea.snippetTextArea").innerHTML;
+        const thisBody = document.querySelectorAll("textarea.bodyTextArea").innerHTML;
+
+        submitEditButton.addEventListener("click", e => {
+            e.preventDefault();
+            const endpoint = `/daily-notes/<%= blog._id %>`;
+        
+            fetch(endpoint, {
+                method:"PUT",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title: thisTitle,
+                    date: thisDate,
+                    snippet: thisSnippet,
+                    body: thisBody 
+                })
+            })
+            .then((response) => response.json())
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err));
+        });
+
+    </script>
+</body>
+
+</html>

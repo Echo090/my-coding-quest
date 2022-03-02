@@ -40,6 +40,30 @@ const daily_notes_delete = (req, res) => {
     .catch((err) => console.log(err));
 };
 
+const daily_notes_put = (req, res) => {
+  const id = req.params.id;
+  console.log("============================");
+  console.log(id);
+  console.log(req.body);
+  Blog.findByIdAndUpdate(id, req.body, {new: true})
+    .then((result) => {
+      res.json({redirect: `/daily-notes/${id}`});
+    })
+    .catch((err) => console.log(err));
+};
+
+const daily_notes_edit_get = (req, res) => {
+  const id = req.params.id;
+  Blog.findById(id)
+    .then((blog) => {
+      res.render("daily-notes-edit", {blog});
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(404).render("404", {title: "404"});
+    });
+};
+
 //MOCK PROJECTS
 //====================================================
 const mock_projects_get = (req, res) => {
@@ -66,6 +90,8 @@ module.exports = {
   daily_notes_post,
   daily_notes_details,
   daily_notes_delete,
+  daily_notes_edit_get,
+  daily_notes_put,
   mock_projects_get,
   form_01_get,
   responsive_site_01_get,
